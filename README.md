@@ -1,5 +1,8 @@
 Domoticz
 ======
+wget https://releases.domoticz.com/releases/beta/domoticz_linux_aarch64.tgz
+mkdir domoticz
+tar -xzf domoticz_linux_aarch64.tgz -C domoticz
 
 Domoticz - http://www.domoticz.com/
 

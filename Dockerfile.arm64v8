@@ -1,0 +1,23 @@
+FROM arm64v8/ubuntu:20.04
+
+RUN apt-get upgrade && apt-get upgrade -y && apt-get dist-upgrade -y
+
+RUN apt-get update && \
+    apt-get install -y unzip \
+        libudev-dev libusb-0.1-4 \
+        curl libcurl4 libcurl4-gnutls-dev \
+        libpython3.8-dev \
+        tzdata
+
+COPY domoticz/ /opt/domoticz/
+WORKDIR /opt/domoticz
+
+RUN chmod +x ./domoticz
+
+VOLUME /config
+VOLUME /opt/domoticz/plugins
+
+EXPOSE 8080
+
+ENTRYPOINT ["/opt/domoticz/domoticz", "-dbase", "/config/domoticz.db", "-log", "/config/domoticz.log"]
+CMD ["-www", "8080"]
