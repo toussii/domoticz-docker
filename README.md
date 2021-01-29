@@ -9,11 +9,11 @@ $ mkdir domoticz
 $ tar -xzf domoticz_linux_aarch64.tgz -C domoticz
 ```
 Copy Docker file for ARM32 or ARM64 if running 64bit image.
-Rename the file to Dockerfile and remove the following line:  
+Remove the following line in the Dockerfile:  
 COPY qemu-*-static /usr/bin
 Run:
 ```
-$ docker build .
+$ docker build -f Dockerfile
 $ docker images
 $ docker tag <ID> toussii/domoticz:latest
 $ docker push toussii/domoticz:latest
