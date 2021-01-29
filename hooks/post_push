@@ -9,6 +9,12 @@ then
     docker push $DOCKER_REPO:$VERSION-arm32v7
 fi
 
+if [[ "$DOCKERFILE_PATH" == *.arm64v8 ]];
+then
+    docker tag $IMAGE_NAME $DOCKER_REPO:$VERSION-arm64v8
+    docker push $DOCKER_REPO:$VERSION-arm64v8
+fi
+
 if [[ "$DOCKERFILE_PATH" == *.x86-64 ]];
 then
     docker tag $IMAGE_NAME $DOCKER_REPO:$VERSION

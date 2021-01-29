@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$DOCKERFILE_PATH" == *.arm32v7 ]];
+if [[ "$DOCKERFILE_PATH" == *.arm32v7 || "$DOCKERFILE_PATH" == *.arm64v8 ]];
     then
         # Register qemu-*-static for all supported processors except the current one, but also remove all registered binfmt_misc before
         docker run --rm --privileged multiarch/qemu-user-static:register --reset

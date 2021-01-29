@@ -10,6 +10,16 @@ then
     curl --silent https://releases.domoticz.com/releases/beta/domoticz_linux_armv7l.tgz --output domoticz.tgz
 fi
 
+if [[ "$DOCKERFILE_PATH" == *.arm64v8 ]];
+then
+    # downloads a local copy of qemu on docker-hub build machines
+    curl -L https://github.com/balena-io/qemu/releases/download/v3.0.0%2Bresin/qemu-3.0.0+resin-aarch64.tar.gz | tar zxvf - -C . && mv qemu-3.0.0+resin-aarch64/qemu-aarch64-static .
+    
+    # download Domoticz build
+    curl --silent https://releases.domoticz.com/releases/beta/version_linux_aarch64.h --output version.h
+    curl --silent https://releases.domoticz.com/releases/beta/domoticz_linux_aarch64.tgz --output domoticz.tgz
+fi
+
 if [[ "$DOCKERFILE_PATH" == *.x86-64 ]];
 then
     # download Domoticz build
