@@ -1,6 +1,6 @@
 Domoticz
 ======
-**Build with hooks**
+**Build with hooks**  
 First register the following exports
 ```
 export DOCKERFILE_PATH=Dockerfile.arm64v8
