@@ -10,7 +10,7 @@ $ tar -xzf domoticz_linux_aarch64.tgz -C domoticz
 ```
 Copy Docker file for ARM32 or ARM64 if running 64bit image.
 Remove the following line in the Dockerfile:  
-COPY qemu-*-static /usr/bin
+COPY qemu-*-static /usr/bin  
 Run:
 ```
 $ docker build -f Dockerfile
