@@ -61,7 +61,7 @@ ARM 64bit = qemu-aarch64-static
 ```
 $ wget https://github.com/multiarch/qemu-user-static/releases/download/v5.2.0-2/qemu-aarch64-static
 $ docker login
-$ docker buildx build --platform linux/arm64 . -t toussii/domoticz --push
+$ docker buildx build --platform linux/arm64 -f Dockerfile.arm64v8 -t toussii/domoticz --push
 ```
 
 Domoticz - http://www.domoticz.com/
