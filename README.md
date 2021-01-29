@@ -114,7 +114,7 @@ may not work correctly on the x86 hardware:
 ```
 $ docker run --rm --privileged linuxkit/binfmt:v0.8
 ```
-verify:  
+Verify:  
 ```
 $ cat /proc/sys/fs/binfmt_misc/qemu-aarch64
 enabled
