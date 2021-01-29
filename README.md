@@ -1,5 +1,19 @@
 Domoticz
 ======
+**Build with hooks**
+First register the following exports
+```
+export DOCKERFILE_PATH=Dockerfile.arm64v8
+export IMAGE_NAME=toussii/domoticz
+export DOCKER_REPO=toussii/domoticz
+```
+Then run the following scripts:
+```
+bash ./hooks/post_checkout
+bash ./hooks/pre_build
+bash ./hooks/build
+bash ./hooks/post_push
+```
 **Build on PI:**  
 SSH to respberry PI and execute the following commands.  
 Download domoticz and extract in domoticz directory:  
