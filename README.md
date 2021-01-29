@@ -35,8 +35,7 @@ magic 7f454c460201010000000000000000000200b7
 ```
 Run following commands:  
 ```
-$ docker buildx create --name mybuilder
-$ docker buildx use mybuilder
+$ docker buildx create --use --name mybuilder
 $ docker buildx inspect --bootstrap
 Name: mybuilder
 Driver: docker-container
