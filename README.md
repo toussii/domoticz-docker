@@ -1,6 +1,6 @@
 Domoticz
 ======
-**Build on PI:**
+**Build on PI:**  
 SSH to respberry PI and execute the following commands. 
 Download domoticz and extract in domoticz directory:
 ```
@@ -18,7 +18,7 @@ $ docker images
 $ docker tag <ID> toussii/domoticz:latest
 $ docker push toussii/domoticz:latest
 ```
-**Build with QEMU:**
+**Build with QEMU:**  
 Install the qemu instruction emulation to register Arm executables to run on the x86 machine. 
 For best results, the latest qemu image should be used. If an older qemu is used some application 
 may not work correctly on the x86 hardware:
