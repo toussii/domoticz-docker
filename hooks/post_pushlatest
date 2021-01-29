@@ -1,0 +1,8 @@
+#!/bin/bash
+docker manifest create \
+toussii/domoticz:latest \
+--amend toussii/domoticz:2020.2.12894-beta \
+--amend toussii/domoticz:2020.2.12893-beta-arm32v7 \
+--amend toussii/domoticz:2020.2.12893-beta-arm64v8
+
+docker manifest push toussii/domoticz:latest
