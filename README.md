@@ -15,6 +15,11 @@ bash ./hooks/build
 bash ./hooks/post_push
 bash ./hooks/cleanup
 ```
+
+To push latest:
+```
+bash ./hooks/post_pushlatest
+```
 **Build on PI:**  
 SSH to respberry PI and execute the following commands.  
 Download domoticz and extract in domoticz directory:  
