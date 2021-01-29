@@ -1,6 +1,16 @@
 FROM arm64v8/ubuntu:20.04
 
-RUN apt-get upgrade && apt-get upgrade -y && apt-get dist-upgrade -y
+ARG APP_HASH
+ARG BUILD_DATE
+
+LABEL org.label-schema.vcs-ref=$APP_HASH \
+      org.label-schema.vcs-url="https://github.com/domoticz/domoticz" \
+      org.label-schema.url="https://domoticz.com/" \
+      org.label-schema.name="Domoticz" \
+      org.label-schema.license="GPLv3" \
+      org.label-schema.build-date=$BUILD_DATE
+
+COPY qemu-aarch64-static /usr/bin
 
 RUN apt-get update && \
     apt-get install -y unzip \
