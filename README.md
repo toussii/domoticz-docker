@@ -4,22 +4,25 @@ Domoticz
 Build on PI:
 SSH to respberry PI and execute the following commands. 
 Download domoticz and extract in domoticz directory:
-wget https://releases.domoticz.com/releases/beta/domoticz_linux_aarch64.tgz
-mkdir domoticz
-tar -xzf domoticz_linux_aarch64.tgz -C domoticz
+$ wget https://releases.domoticz.com/releases/beta/domoticz_linux_aarch64.tgz
+$ mkdir domoticz
+$ tar -xzf domoticz_linux_aarch64.tgz -C domoticz
 
 Copy Docker file for ARM32 or ARM64 if running 64bit image.
 Rename the file to Dockerfile and remove the following line:
 COPY qemu-*-static /usr/bin
 
 Run:
-docker build .
+$ docker build .
+$ docker images
+$ docker tag <ID> toussii/domoticz:latest
+$ docker push toussii/domoticz:latest
 
 Build with QEMU:
 Install the qemu instruction emulation to register Arm executables to run on the x86 machine. 
 For best results, the latest qemu image should be used. If an older qemu is used some application 
 may not work correctly on the x86 hardware:
-docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
+$ docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
 
 verify:
 $ cat /proc/sys/fs/binfmt_misc/qemu-aarch64
@@ -42,8 +45,17 @@ Endpoint: unix:///var/run/docker.sock
 Status: running
 Platforms: linux/amd64, linux/arm64, linux/arm/v7, linux/arm/v6
 
-docker login
-docker buildx build --platform linux/arm64 . -t toussii/domoticz --push
+Download domoticz and extract in domoticz directory:
+$ wget https://releases.domoticz.com/releases/beta/domoticz_linux_aarch64.tgz
+$ mkdir domoticz
+$ tar -xzf domoticz_linux_aarch64.tgz -C domoticz
+
+Download QUEMU
+https://github.com/multiarch/qemu-user-static/releases
+ARM 32bit = qemu-arm-static 
+ARM 64bit = qemu-aarch64-static
+$ docker login
+$ docker buildx build --platform linux/arm64 . -t toussii/domoticz --push
 ```
 
 Domoticz - http://www.domoticz.com/
