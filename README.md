@@ -22,7 +22,7 @@ Install the qemu instruction emulation to register Arm executables to run on the
 For best results, the latest qemu image should be used. If an older qemu is used some application  
 may not work correctly on the x86 hardware:  
 ```
-$ docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
+$ docker run --rm --privileged linuxkit/binfmt:v0.8
 ```
 verify:  
 ```
