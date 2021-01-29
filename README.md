@@ -1,5 +1,14 @@
 Domoticz
 ======
+Domoticz - http://www.domoticz.com/
+
+Docker containers with official Domoticz beta builds
+
+[![](https://images.microbadger.com/badges/image/demydiuk/domoticz.svg)](https://microbadger.com/images/demydiuk/domoticz "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/demydiuk/domoticz.svg)](https://microbadger.com/images/demydiuk/domoticz "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/license/demydiuk/domoticz.svg)](https://microbadger.com/images/demydiuk/domoticz "Get your own license badge on microbadger.com")
+## How to build
+
 **Build with hooks**  
 First register the following exports
 ```
@@ -82,15 +91,6 @@ $ wget https://github.com/multiarch/qemu-user-static/releases/download/v5.2.0-2/
 $ docker login
 $ docker buildx build --platform linux/arm64 -f Dockerfile.arm64v8 . -t toussii/domoticz:latest --push
 ```
-
-Domoticz - http://www.domoticz.com/
-
-Docker containers with official Domoticz beta builds
-
-[![](https://images.microbadger.com/badges/image/demydiuk/domoticz.svg)](https://microbadger.com/images/demydiuk/domoticz "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/demydiuk/domoticz.svg)](https://microbadger.com/images/demydiuk/domoticz "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/license/demydiuk/domoticz.svg)](https://microbadger.com/images/demydiuk/domoticz "Get your own license badge on microbadger.com")
-
 ## How to use
 
 **Pull image**
