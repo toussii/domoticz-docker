@@ -16,7 +16,7 @@ bash ./hooks/post_push
 bash ./hooks/cleanup
 ```
 
-To push latest:
+To push latest (change image versions in the script):
 ```
 bash ./hooks/post_pushlatest
 ```
