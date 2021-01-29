@@ -1,0 +1,15 @@
+#!/bin/bash
+rm version.h
+rm domoticz.tgz
+rm -rf domoticz
+if [[ "$DOCKERFILE_PATH" == *.arm32v7 ]];
+then
+rm qemu-arm-static
+rm -rf qemu-3.0.0+resin-arm
+fi
+if [[ "$DOCKERFILE_PATH" == *.arm64v8 ]];
+then
+rm qemu-aarch64-static
+rm -rf qemu-3.0.0+resin-aarch64
+fi
+
