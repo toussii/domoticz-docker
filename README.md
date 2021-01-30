@@ -73,8 +73,8 @@ services:
 First register the following exports
 ```
 export DOCKERFILE_PATH=Dockerfile.arm64v8
-export IMAGE_NAME=toussii/domoticz
-export DOCKER_REPO=toussii/domoticz
+export IMAGE_NAME=<docker_id>/domoticz
+export DOCKER_REPO=<docker_id>/domoticz
 ```
 Then run the following scripts:
 ```
@@ -99,9 +99,9 @@ COPY qemu-*-static /usr/bin
 ```
 Run:  
 ```
-$ docker build -f Dockerfile.arm64v8 . -t toussii/domoticz:latest
+$ docker build -f Dockerfile.arm64v8 . -t <docker_id>/domoticz:latest
 $ docker images
-$ docker push toussii/domoticz:latest
+$ docker push <docker_id>/domoticz:latest
 ```
 **Build with QEMU:**  
 Install the qemu instruction emulation to register Arm executables to run on the x86 machine.  
@@ -146,5 +146,5 @@ ARM 64bit = qemu-aarch64-static
 ```
 $ wget https://github.com/multiarch/qemu-user-static/releases/download/v5.2.0-2/qemu-aarch64-static
 $ docker login
-$ docker buildx build --platform linux/arm64 -f Dockerfile.arm64v8 . -t toussii/domoticz:latest --push
+$ docker buildx build --platform linux/arm64 -f Dockerfile.arm64v8 . -t <docker_id>/domoticz:latest --push
 ```
