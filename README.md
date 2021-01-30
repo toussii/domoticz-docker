@@ -84,11 +84,6 @@ bash ./hooks/build
 bash ./hooks/post_push
 bash ./scripts/cleanup
 ```
-
-To push latest (change image versions in the script):
-```
-bash ./scripts/pushlatest
-```
 **Build on PI:**  
 SSH to respberry PI and execute the following commands.  
 Download domoticz and extract in domoticz directory:  
