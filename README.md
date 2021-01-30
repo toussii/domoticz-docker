@@ -83,12 +83,12 @@ bash ./hooks/post_checkout
 bash ./hooks/pre_build
 bash ./hooks/build
 bash ./hooks/post_push
-bash ./hooks/cleanup
+bash ./scripts/cleanup
 ```
 
 To push latest (change image versions in the script):
 ```
-bash ./hooks/post_pushlatest
+bash ./scripts/pushlatest
 ```
 **Build on PI:**  
 SSH to respberry PI and execute the following commands.  
