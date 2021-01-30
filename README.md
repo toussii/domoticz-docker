@@ -13,7 +13,6 @@ Docker containers with official Domoticz beta builds
 
 ```
 docker pull demydiuk/domoticz:$VERSION
-
 ```
 
 **Run container**
