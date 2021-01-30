@@ -7,6 +7,7 @@ docker pull toussii/domoticz:latest-x86-64
 docker pull toussii/domoticz:latest-arm32v7
 docker pull toussii/domoticz:latest-arm64v8
 
+docker manifest rm toussii/domoticz:latest
 docker manifest create \
 toussii/domoticz:latest \
 --amend toussii/domoticz:latest-x86-64 \
