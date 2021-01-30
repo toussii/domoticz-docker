@@ -21,14 +21,14 @@ then
     docker push $DOCKER_REPO:$VERSION-x86-64
 fi
 
-docker pull toussii/domoticz:latest-x86-64
-docker pull toussii/domoticz:latest-arm32v7
-docker pull toussii/domoticz:latest-arm64v8
+docker pull $DOCKER_REPO:latest-x86-64
+docker pull $DOCKER_REPO:latest-arm32v7
+docker pull $DOCKER_REPO:latest-arm64v8
 
 docker manifest create \
-toussii/domoticz:latest \
---amend toussii/domoticz:latest-x86-64 \
---amend toussii/domoticz:latest-arm32v7 \
---amend toussii/domoticz:latest-arm64v8
+$DOCKER_REPO:latest \
+--amend $DOCKER_REPO:latest-x86-64 \
+--amend $DOCKER_REPO:latest-arm32v7 \
+--amend $DOCKER_REPO:latest-arm64v8
 
-docker manifest push toussii/domoticz:latest
+docker manifest push $DOCKER_REPO:latest
