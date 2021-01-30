@@ -25,6 +25,7 @@ docker pull $DOCKER_REPO:latest-x86-64
 docker pull $DOCKER_REPO:latest-arm32v7
 docker pull $DOCKER_REPO:latest-arm64v8
 
+export DOCKER_CLI_EXPERIMENTAL=enabled
 docker manifest create \
 $DOCKER_REPO:latest \
 --amend $DOCKER_REPO:latest-x86-64 \
